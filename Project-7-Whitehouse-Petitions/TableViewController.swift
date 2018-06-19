@@ -21,11 +21,12 @@ class TableViewController: UITableViewController {
     
     //MARK:- Get petitions from Whitehouse
     func downloadPetitions(){
+        let urlString: String
         
         if navigationController?.tabBarItem.tag == 0{
-            let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         } else {
-            let urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
+            urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
         }
 
         if let url = URL(string: urlString) {
